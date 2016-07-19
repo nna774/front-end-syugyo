@@ -15,14 +15,14 @@ module.exports = {
 
   // webpackの設定
   webpack: {
-    entry: src + '/js/app.jsx',
+    entry: src + '/js/app.js',
     output: {
       filename: 'bundle.js'
     },
-//    devtool: 'inline-source-map',
+    devtool: 'inline-source-map',
     module: {
       loaders: [
-        { test: /\.jsx$/, loader: 'jsx-loader' }
+        { test: /\.js$/, loader: 'jsx-loader' }
       ]
     },
     resolve: {
