@@ -15,7 +15,7 @@ module.exports = {
 
   // webpackの設定
   webpack: {
-    entry: src + '/js/app.js',
+    entry: src + '/js/app.jsx',
     output: {
       filename: 'bundle.js'
     },
