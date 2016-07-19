@@ -2,10 +2,17 @@
 var React = require('react');
 var Hello = React.createClass({
   getInitialState: function () {
-    return { name: "not clicked"  };
+      return {
+          name: "not clicked",
+          clicked: false
+      };
   },
   onClick: function () {
-    this.setState( {name: "clicked" });
+    if (!this.state.clicked) {
+      this.setState( {name: "clicked", clicked: true });
+      return
+    }
+    this.setState( {name: "not clicked", clicked: false });
   },
   render: function() {
     return <div onClick={ this.onClick } >{this.state.name}</div>;
