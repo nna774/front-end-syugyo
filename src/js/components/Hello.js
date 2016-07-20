@@ -1,22 +1,26 @@
 /** @jsx React.DOM */
 var React = require('react');
-var Hello = React.createClass({
-  getInitialState: function () {
-      return {
+
+class Hello extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
           name: "not clicked",
           clicked: false
-      };
-  },
-  onClick: function () {
+    };
+  }
+
+  onClick() {
     if (!this.state.clicked) {
       this.setState( {name: "clicked", clicked: true });
       return
     }
     this.setState( {name: "not clicked", clicked: false });
-  },
-  render: function() {
-    return <div onClick={ this.onClick } >{this.state.name}</div>;
   }
-});
+
+  render() {
+    return <div onClick={ this.onClick.bind(this) } >{this.state.name}</div>;
+  }
+}
 
 module.exports = Hello;
